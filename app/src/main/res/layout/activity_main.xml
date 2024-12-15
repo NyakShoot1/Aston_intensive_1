@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,12 +9,52 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/nameTrackTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/play_stop_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Track name"
+        />
+
+
+    <ImageButton
+        android:id="@+id/previous_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:contentDescription="@string/previous_track"
+        android:src="@drawable/baseline_skip_previous_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/play_stop_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/play_stop_btn"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/play_stop_music"
+        android:src="@drawable/baseline_play_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toStartOf="@id/next_btn"
+        app:layout_constraintStart_toEndOf="@id/previous_btn"
+        />
+
+    <ImageButton
+        android:id="@+id/next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:contentDescription="@string/next_track"
+        android:src="@drawable/baseline_skip_next_24"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/play_stop_btn"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
